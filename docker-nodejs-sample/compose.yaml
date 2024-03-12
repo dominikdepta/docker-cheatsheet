@@ -4,3 +4,11 @@ services:
       context: .
     ports:
       - 3000:3000
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+          target: /usr/src/app
+        - path: ./src
+          action: sync+restart
+          target: /usr/src/app/src

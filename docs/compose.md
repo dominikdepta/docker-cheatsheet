@@ -3,6 +3,11 @@
 $ docker compose up -d
 ```
 
+**Rebuild an image and start a container**
+```console
+$ docker compose up --build
+```
+
 **Watch build context for service and rebuild/refresh containers when files are updated**
 ```console
 $ docker compose watch
