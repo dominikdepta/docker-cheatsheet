@@ -26,7 +26,12 @@ $ docker rm <container-id>
 $ docker rm -f <container-id>
 ```
 
-**Copy a file from a continer**
+**Copy a file from a container**
 ```console
 docker run --rm -i --entrypoint=cat nginx /etc/nginx/nginx.conf > ./nginx.conf
+```
+
+**Mount a (configuration) file**
+```console
+docker run -v ./nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
 ```
