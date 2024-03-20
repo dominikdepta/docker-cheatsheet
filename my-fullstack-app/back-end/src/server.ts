@@ -26,6 +26,12 @@ app.get('/users', (req, res) => {
   res.send(fakeUsers)
 })
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`App is listening on port ${port}`)
+})
+
+process.on('SIGTERM', () => {
+  server.close(() => {
+    console.log('App server has been closed.')
+  })
 })
