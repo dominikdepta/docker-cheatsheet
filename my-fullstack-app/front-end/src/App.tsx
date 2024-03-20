@@ -1,33 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useCallback, useEffect, useState } from 'react'
+import { UserDto, getUsers } from './api/users'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState<UserDto[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+  const handleMoreClick = useCallback(() => {
+    (async () => {
+      setIsLoadingMore(true)
+      const fetchedUsers = await getUsers({ size: 3 })
+
+      setUsers((users) => ([...users, ...fetchedUsers]))
+      setIsLoadingMore(false)
+    })()
+  }, [setIsLoadingMore, setUsers])
+
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true)
+      const fetchedUsers = await getUsers({ size: 3 })
+
+      setUsers(fetchedUsers)
+      setIsLoading(false)
+    })()
+  }, [])
+
+  const isMoreButtonDisabled = isLoading || isLoadingMore;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='list-container'>
+        {isLoading && <p>Loading users...</p> }
+
+        {!isLoading && users.map((user) => {
+          const {id, email, firstName, lastName } = user
+
+          return (
+            <div key={id} className='user'>
+              <span className='user__name'>{firstName} {lastName}</span>
+              <span className='user__email'>{email}</span>
+            </div>
+          )
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+
+      <div className="load-more">
+        <button className='load-more__button' disabled={isMoreButtonDisabled} onClick={handleMoreClick}>
+          {isMoreButtonDisabled ? '...' : 'More'}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
