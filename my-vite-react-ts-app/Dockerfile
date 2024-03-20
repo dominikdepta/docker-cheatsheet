@@ -18,4 +18,5 @@ RUN npm run build
 # run
 FROM nginx
 
+COPY --from=build /app/public /usr/share/nginx/html/public
 COPY --from=build /app/dist /usr/share/nginx/html
