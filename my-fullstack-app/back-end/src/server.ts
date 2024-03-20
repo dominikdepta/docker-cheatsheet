@@ -23,6 +23,8 @@ app.get('/users', (req, res) => {
   const { size = 10 } = req.query
   const fakeUsers = faker.helpers.multiple(createFakeUser, { count: Number(size) })
 
+  console.log(`Incoming request on port ${port}`)
+
   res.send(fakeUsers)
 })
 
