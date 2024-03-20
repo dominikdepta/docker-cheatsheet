@@ -1,8 +1,11 @@
 import express from 'express'
+import cors from 'cors'
 import { faker } from '@faker-js/faker'
 
 const app = express()
 const port = process.env.PORT || 3000
+
+app.use(cors())
 
 app.get('/health', (req, res) => {
   res.send('ok')
@@ -17,7 +20,8 @@ const createFakeUser = () => ({
 
 
 app.get('/users', (req, res) => {
-  const fakeUsers = faker.helpers.multiple(createFakeUser, { count: 25 })
+  const { size = 10 } = req.query
+  const fakeUsers = faker.helpers.multiple(createFakeUser, { count: Number(size) })
 
   res.send(fakeUsers)
 })
