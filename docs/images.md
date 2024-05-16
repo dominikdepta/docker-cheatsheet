@@ -19,16 +19,8 @@ docker push <repository>/<image-name>
 
 **List images**
 ```sh
-docker image ls
-```
-Show all images (default hides intermediate images)
-```sh
-docker image ls --all
-
-REPOSITORY                                          TAG                    IMAGE ID       CREATED         SIZE
-bindmount-apps-todo-app                             latest                 ccfc796ffab5   2 hours ago     197MB
-multi-container-app-todo-app                        latest                 66d156590e33   2 hours ago     226MB
-welcome-to-docker                                   latest                 f95ca001c2bb   2 days ago      226MB
+docker images
+# -a, --all             Show all images (default hides intermediate images)
 ```
 
 **Show an image's layers history**
