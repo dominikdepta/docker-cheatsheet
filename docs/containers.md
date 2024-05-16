@@ -21,7 +21,7 @@ docker stop <container>
 docker rm <container>
 ```
 
-**Start a container the interactive mode**
+**Start a container in the interactive mode**
 ```sh
 docker start -a -i <container>
 ```
