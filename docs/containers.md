@@ -1,6 +1,6 @@
 **Run a container**
 ```sh
-docker run -d -p 8088:3000 --name <container-name> <image-name>
+docker run -d -p 8088:3000 --name <container> <image-name>
 ```
 
 **List containers**
