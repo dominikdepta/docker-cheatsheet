@@ -17,17 +17,17 @@ volumes:
 ```
 
 **Create a volume**
-```console
+```sh
 $ docker volume create my-vol
 ```
 
 **List volumes**
-```console
+```sh
 $ docker volume ls
 ```
 
 **Inspect a volume**
-```console
+```sh
 $ docker volume inspect my-vol
 [
     {
@@ -42,7 +42,7 @@ $ docker volume inspect my-vol
 ```
 
 **Mount a volume**
-```console
+```sh
 $ docker run -d \
   --name devtest \
   --mount source=myvol2,target=/app \
@@ -50,7 +50,7 @@ $ docker run -d \
 ```
 
 **Remove a volume**
-```console
+```sh
 $ docker volume rm myvol2
 ```
 

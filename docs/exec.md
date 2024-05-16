@@ -1,4 +1,4 @@
 **Execute an interactive sh shell on the container.**
-```console
+```sh
 $ docker exec -it <container-name> sh
 ```

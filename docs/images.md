@@ -1,28 +1,28 @@
 **Build an image**
-```console
+```sh
 $ docker build -t <image-name> .
 ```
 Repository name must be a part of the whole tag
-```console
+```sh
 $ docker build -t <repository>/<image-name>:<image-tag> .
 ```
 
 **Tag an image**
-```console
+```sh
 $ docker tag <image-name> <repository>/<image-name>
 ```
 
 **Push an image**
-```console
+```sh
 $ docker push <repository>/<image-name>
 ```
 
 **List images**
-```console
+```sh
 $ docker image ls
 ```
 Show all images (default hides intermediate images)
-```console
+```sh
 $ docker image ls --all
 
 REPOSITORY                                          TAG                    IMAGE ID       CREATED         SIZE
@@ -32,7 +32,7 @@ welcome-to-docker                                   latest                 f95ca
 ```
 
 **Show an image's layers history**
-```console
+```sh
 $ docker image history <image-name>
 
 IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT

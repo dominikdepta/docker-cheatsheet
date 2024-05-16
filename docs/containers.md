@@ -1,10 +1,10 @@
 **Run a container**
-```console
+```sh
 $ docker run -d -p 8088:3000 --name <container-name> <image-name>
 ```
 
 **List containers**
-```console
+```sh
 $ docker ps
 
 CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS         PORTS                                       NAMES
@@ -12,17 +12,17 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED          STATU
 ```
 
 **Stop a container**
-```console
+```sh
 $ docker stop <container-id>
 ```
 
 **Remove a container**
-```console
+```sh
 $ docker rm <container-id>
 ```
 
 **Stop and remove a container (force)**
-```console
+```sh
 $ docker rm -f <container-id>
 ```
 
@@ -39,6 +39,6 @@ docker run --rm -i --entrypoint=cat nginx /etc/nginx/nginx.conf > ./nginx.conf
 ```
 
 **Mount a (configuration) file**
-```console
+```sh
 docker run -v ./nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
 ```
