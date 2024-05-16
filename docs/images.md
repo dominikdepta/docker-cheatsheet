@@ -1,29 +1,29 @@
 **Build an image**
 ```sh
-$ docker build -t <image-name> .
+docker build -t <image-name> .
 ```
 Repository name must be a part of the whole tag
 ```sh
-$ docker build -t <repository>/<image-name>:<image-tag> .
+docker build -t <repository>/<image-name>:<image-tag> .
 ```
 
 **Tag an image**
 ```sh
-$ docker tag <image-name> <repository>/<image-name>
+docker tag <image-name> <repository>/<image-name>
 ```
 
 **Push an image**
 ```sh
-$ docker push <repository>/<image-name>
+docker push <repository>/<image-name>
 ```
 
 **List images**
 ```sh
-$ docker image ls
+docker image ls
 ```
 Show all images (default hides intermediate images)
 ```sh
-$ docker image ls --all
+docker image ls --all
 
 REPOSITORY                                          TAG                    IMAGE ID       CREATED         SIZE
 bindmount-apps-todo-app                             latest                 ccfc796ffab5   2 hours ago     197MB
@@ -33,7 +33,7 @@ welcome-to-docker                                   latest                 f95ca
 
 **Show an image's layers history**
 ```sh
-$ docker image history <image-name>
+docker image history <image-name>
 
 IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
 0a785058b0d0   2 days ago    EXPOSE map[3000/tcp:{}]                         0B        buildkit.dockerfile.v0

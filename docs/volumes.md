@@ -18,17 +18,17 @@ volumes:
 
 **Create a volume**
 ```sh
-$ docker volume create my-vol
+docker volume create my-vol
 ```
 
 **List volumes**
 ```sh
-$ docker volume ls
+docker volume ls
 ```
 
 **Inspect a volume**
 ```sh
-$ docker volume inspect my-vol
+docker volume inspect my-vol
 [
     {
         "Driver": "local",
@@ -43,7 +43,7 @@ $ docker volume inspect my-vol
 
 **Mount a volume**
 ```sh
-$ docker run -d \
+docker run -d \
   --name devtest \
   --mount source=myvol2,target=/app \
   nginx:latest
@@ -51,7 +51,7 @@ $ docker run -d \
 
 **Remove a volume**
 ```sh
-$ docker volume rm myvol2
+docker volume rm myvol2
 ```
 
 ## Using bind mounts
