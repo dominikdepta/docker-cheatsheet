@@ -43,3 +43,9 @@ IMAGE          CREATED       CREATED BY                                      SIZ
 <missing>      6 weeks ago   /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
 <missing>      6 weeks ago   /bin/sh -c #(nop) ADD file:37a76ec18f9887751…   7.38MB
 ```
+
+**Remove unused images**
+```sh
+docker image prune
+# -a, --all             Remove all unused images, not just dangling ones
+```
