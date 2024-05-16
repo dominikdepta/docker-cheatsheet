@@ -21,6 +21,11 @@ docker stop <container-id>
 docker rm <container-id>
 ```
 
+**Start a container the interactive mode**
+```sh
+docker start -a -i <container>
+```
+
 **Stop and remove a container (force)**
 ```sh
 docker rm -f <container-id>
