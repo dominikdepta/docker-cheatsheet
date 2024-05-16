@@ -13,12 +13,12 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED          STATU
 
 **Stop a container**
 ```sh
-docker stop <container-id>
+docker stop <container>
 ```
 
 **Remove a container**
 ```sh
-docker rm <container-id>
+docker rm <container>
 ```
 
 **Start a container the interactive mode**
@@ -28,5 +28,5 @@ docker start -a -i <container>
 
 **Stop and remove a container (force)**
 ```sh
-docker rm -f <container-id>
+docker rm -f <container>
 ```
