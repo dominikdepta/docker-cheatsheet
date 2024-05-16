@@ -1,6 +1,12 @@
 **Run a container**
 ```sh
 docker run -d -p 8088:3000 --name <container> <image-name>
+# -d, --detach        Run container in background and print container ID
+# -e, --env list      Set environment variables
+#     --name string   Assign a name to the container
+# -p, --publish list  Publish a container's port(s) to the host
+#     --rm            Automatically remove the container when it exits
+# -v, --volume list   Bind mount a volume
 ```
 
 **List containers**
@@ -21,7 +27,7 @@ docker stop <container>
 docker rm <container>
 ```
 
-**Start a container in the interactive mode**
+**Start an existing container in the interactive mode**
 ```sh
 docker start -a -i <container>
 ```
