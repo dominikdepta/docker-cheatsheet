@@ -14,7 +14,7 @@ docker volume ls
 ```sh
 docker run -d \
   --name devtest \
-  -v myapp_data:/app \
+  -v myapp_data:/app/data \
   -v ./dir:/app/dir
 ```
 
