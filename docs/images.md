@@ -1,6 +1,9 @@
 **Build an image**
 ```sh
-docker build -t <image-name> .
+docker build \
+  -t <image-name> \
+  --build-arg="NODE_VERSION=12"
+  .
 ```
 Repository name must be a part of the whole tag
 ```sh
