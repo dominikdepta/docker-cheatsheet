@@ -4,7 +4,7 @@ docker run \
   -d \
   -p 8088:3000 \
   --name <container> \
-  --env PORT=3000
+  --env PORT=3000 \
   <image-name>
 # -d, --detach        Run container in background and print container ID
 # -e, --env list      Set environment variables
