@@ -15,7 +15,8 @@ docker volume ls
 docker run -d \
   --name devtest \
   -v myapp_data:/app/data \
-  -v ./dir:/app/dir
+  -v ./dir:/app/dir \
+  -v ./dir2:/app/dir2:ro
 ```
 
 **Remove a volume**
