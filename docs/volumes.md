@@ -10,6 +10,19 @@ docker volume create myapp_data
 docker volume ls
 ```
 
+**Mount a volume**
+```sh
+docker run -d \
+  --name devtest \
+  -v myapp_data:/app \
+  -v ./dir:/app/dir
+```
+
+**Remove a volume**
+```sh
+docker volume rm myapp_data
+```
+
 **Inspect a volume**
 ```sh
 docker volume inspect myapp_data
@@ -23,24 +36,6 @@ docker volume inspect myapp_data
         "Scope": "local"
     }
 ]
-```
-
-**Mount a volume**
-```sh
-docker run -d \
-  --name devtest
-  -v myapp_data:/app
-```
-```sh
-docker run -d \
-  --name devtest \
-  --mount source=myapp_data,target=/app/data \
-  nginx:latest
-```
-
-**Remove a volume**
-```sh
-docker volume rm myapp_data
 ```
 
 **Docker Compose**
