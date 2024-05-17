@@ -2,7 +2,7 @@
 
 **Create a volume**
 ```sh
-docker volume create my-vol
+docker volume create myapp_data
 ```
 
 **List volumes**
@@ -12,13 +12,13 @@ docker volume ls
 
 **Inspect a volume**
 ```sh
-docker volume inspect my-vol
+docker volume inspect myapp_data
 [
     {
         "Driver": "local",
         "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
-        "Name": "my-vol",
+        "Mountpoint": "/var/lib/docker/volumes/myapp_data/_data",
+        "Name": "myapp_data",
         "Options": {},
         "Scope": "local"
     }
@@ -28,14 +28,19 @@ docker volume inspect my-vol
 **Mount a volume**
 ```sh
 docker run -d \
+  --name devtest
+  -v myapp_data:/app
+```
+```sh
+docker run -d \
   --name devtest \
-  --mount source=myvol2,target=/app \
+  --mount source=myapp_data,target=/app/data \
   nginx:latest
 ```
 
 **Remove a volume**
 ```sh
-docker volume rm myvol2
+docker volume rm myapp_data
 ```
 
 **Docker Compose**
