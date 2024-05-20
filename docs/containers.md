@@ -33,6 +33,11 @@ docker stop <container>
 docker rm <container>
 ```
 
+**Remove all stopped containers**
+```sh
+docker container prune
+```
+
 **Start an existing container in the interactive mode**
 ```sh
 docker start -a -i <container>
