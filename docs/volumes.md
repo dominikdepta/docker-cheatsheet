@@ -24,6 +24,11 @@ docker run -d \
 docker volume rm myapp_data
 ```
 
+**Remove unused volumes
+```sh
+docker volume prune
+```
+
 **Inspect a volume**
 ```sh
 docker volume inspect myapp_data
