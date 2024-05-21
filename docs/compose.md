@@ -1,6 +1,6 @@
 **Create and start containers**
 ```sh
-docker compose up
+docker compose up [OPTIONS] [SERVICE...]
 # --build                   Build images before starting containers
 # -d, --detach              Detached mode: Run containers in the background
 # --force-recreate          Recreate containers even if their configuration and image haven't changed
