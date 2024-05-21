@@ -7,12 +7,13 @@ docker run \
   --env PORT=3000 \
   --env-file ./.env \
   <image-name>
-# -d, --detach        Run container in background and print container ID
-# -e, --env list      Set environment variables
-#     --name string   Assign a name to the container
-# -p, --publish list  Publish a container's port(s) to the host
-#     --rm            Automatically remove the container when it exits
-# -v, --volume list   Bind mount a volume
+# -d, --detach          Run container in background and print container ID
+# -e, --env list        Set environment variables
+#     --name string     Assign a name to the container
+# -p, --publish list    Publish a container's port(s) to the host
+#     --rm              Automatically remove the container when it exits
+# -v, --volume list     Bind mount a volume
+# -w, --workdir string  Working directory inside the container
 ```
 
 **List containers**
