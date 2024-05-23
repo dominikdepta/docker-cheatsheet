@@ -2,7 +2,8 @@
 ```sh
 docker build \
   -t <image-name> \
-  --build-arg="NODE_VERSION=12"
+  --build-arg="NODE_VERSION=12" \
+  # --target string   Set the target build stage to build
   .
 ```
 Repository name must be a part of the whole tag
