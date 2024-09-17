@@ -1,6 +1,8 @@
-# docker container attach
-Use docker attach to attach your terminal's standard input, output, and error (or any combination of the three) to a running container using the container's ID or name. This lets you view its output or control it interactively, as though the commands were running directly in your terminal.
+# Docker Attach
 
-```sh
-docker attach <container>
-```
+## Overview
+`docker attach` allows you to connect your terminal's standard input, output, and error to an already running container. This lets you view the container’s real-time output or interact with it directly.
+
+### Usage
+```bash
+docker attach <container_id_or_name>
