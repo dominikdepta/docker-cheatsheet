@@ -1,50 +1,42 @@
-**Run a container**
+
+# Docker Commands
+
+## `docker run`
+Runs a new container from a specified image.
 ```sh
-docker run \
-  -d \
-  -p 8088:3000 \
-  --name <container> \
-  --env PORT=3000 \
-  --env-file ./.env \
-  <image-name>
-# -d, --detach          Run container in background and print container ID
-# -e, --env list        Set environment variables
-#     --name string     Assign a name to the container
-# -p, --publish list    Publish a container's port(s) to the host
-#     --rm              Automatically remove the container when it exits
-# -v, --volume list     Bind mount a volume
-# -w, --workdir string  Working directory inside the container
+docker run <image> # Run a container from a specified image
+docker run -d <image> # Run a container in detached mode
+docker run --name <name> <image> # Run a container with a specific name
+docker run -p <host_port>:<container_port> <image> # Map host port to container port
+docker run --rm <image> # Automatically remove the container when it exits
+docker run --volume <host_path>:<container_path> <image> # Mount a volume from the host
+docker run --env <key>=<value> <image> # Set an environment variable in the container
+docker run --workdir <directory> <image> # Set the working directory inside the container
 ```
 
-**List containers**
+## `docker stop`
+Stops one or more running containers.
 ```sh
-docker ps
-
-CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS         PORTS                                       NAMES
-53e6336c8097   getting-started   "docker-entrypoint.s…"   10 seconds ago   Up 9 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   crazy_dirac
+docker stop <container_id> # Stop a specific container
+docker stop <container_id1> <container_id2> # Stop multiple containers
 ```
 
-**Stop a container**
+## `docker ps`
+Lists all running containers.
 ```sh
-docker stop <container>
+docker ps # List all running containers
+docker ps -a # List all containers, including stopped ones
 ```
 
-**Remove a container**
+## `docker rm`
+Removes one or more stopped containers.
 ```sh
-docker rm <container>
+docker rm <container_id> # Remove a specific container
+docker rm <container_id1> <container_id2> # Remove multiple containers
 ```
 
-**Remove all stopped containers**
+## `docker container prune`
+Removes all stopped containers.
 ```sh
-docker container prune
-```
-
-**Start an existing container in the interactive mode**
-```sh
-docker start -a -i <container>
-```
-
-**Stop and remove a container (force)**
-```sh
-docker rm -f <container>
+docker container prune # Remove all stopped containers
 ```
